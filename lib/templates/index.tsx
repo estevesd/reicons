@@ -1,6 +1,3 @@
-import React from 'react';
-import t from 'prop-types';
-
 const icons = {
 <% _.each(Object.keys(icons), function(icon, i) { %>  <%= icon %>: {
     className: '<%= icons[icon].className %>',
@@ -13,9 +10,20 @@ const icons = {
   }<% if (i < Object.keys(icons).length - 1) { %>, <% } %>
 <% }) %>};
 
-const Icon = ({ name, size, className, style, ...props }) => {
-  const ChosenIcon = icons[name];
+interface IIconProps  {
+  name?: string,
+  className: string,
+  size?: number,
+  color: string,
+  style: object,
+  small: boolean
+};
 
+const Icon = ({ name, size = 30, color, className, style, small, ...props }: IIconProps) => {
+  let ChosenIcon = icons[name];
+  if (small && icons[name + "16"]){
+    ChosenIcon = icons[name + "16"]
+  }
   if (!ChosenIcon) {
     throw new Error(`Cannot find icon '${name}'`);
   }
@@ -25,23 +33,13 @@ const Icon = ({ name, size, className, style, ...props }) => {
       {...props}
       width={size}
       height={size}
+      fill={color}
       viewBox={ChosenIcon.viewBox}
       style={{ ...style, width: size, height: size }}
       className={`${className ? className + ' ' : ''}Icon ${ChosenIcon.className}`}>
       {ChosenIcon.path}
     </svg>
   );
-};
-
-Icon.propTypes = {
-  name: t.string,
-  className: t.string,
-  size: t.number,
-  style: t.object
-};
-
-Icon.defaultProps = {
-  size: 25
 };
 
 export default Icon;

@@ -1,6 +1,6 @@
 {
-  "name": "reicons",
-  "version": "0.4.7",
+  "name": "@viciniti/reicons",
+  "version": "0.5.5",
   "description": "CLI tool to generate React icons component using svg files",
   "bin": {
     "reicons": "./bin/reicons.js"
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pedronauck/reicons.git"
+    "url": "git+https://github.com/estevesd/reicons.git"
   },
   "license": "MIT",
   "preferGlobal": true,
