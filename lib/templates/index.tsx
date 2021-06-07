@@ -7,7 +7,7 @@ export const icons = {
         <%= icons[icon].path %>
       </g>
     )
-  }<% if (i < Object.keys(icons).length - 1) { %>, <% } %>
+  }<% if (i < Object.keys(icons).length - 1) { %>,<% } %>
 <% }) %>};
 
 interface IIconProps {
@@ -21,7 +21,7 @@ interface IIconProps {
 
 const Icon = ({ name, size = 30, color = '#2b95d6', className, style, small, ...props }: IIconProps) => {
   let ChosenIcon = icons[name];
-  if (small && icons[name + "16"]){
+  if (small && icons[name + "16"]) {
     ChosenIcon = icons[name + "16"]
   }
   if (!ChosenIcon) {
