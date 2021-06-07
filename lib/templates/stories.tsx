@@ -19,7 +19,7 @@ const IconContainer = styled.div`
 
 export default {
     component: Icon,
-    title: 'Icons',
+    title: 'Core/Atoms/Icons',
     argTypes: {
         color: { control: 'color' },
         name: {
@@ -34,7 +34,7 @@ export default {
 const AllIcons = args => <AllWrap><% _.each(Object.keys(icons), function(icon, i) {%>
     <IconContainer><<%= icon %> {...args} /><p><%= icon %></p></IconContainer><% }) %>
 </AllWrap>;
-export const All = AllIcons.bind({});
+export const All:any = AllIcons.bind({});
 All.argTypes = {
     name: { table: { disable: true } }
 }
@@ -43,7 +43,7 @@ All.args = {
     color: '#2b95d6'
 };
 
-const OneIcon = args => <Icon {...args} />;
+const OneIcon = (args) => <Icon {...args} />;
 export const One = OneIcon.bind({});
 One.args = {
     name: 'IconActuator',

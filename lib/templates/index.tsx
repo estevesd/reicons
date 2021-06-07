@@ -1,4 +1,4 @@
-const icons = {
+export const icons = {
 <% _.each(Object.keys(icons), function(icon, i) { %>  <%= icon %>: {
     className: '<%= icons[icon].className %>',
     viewBox: '<%= icons[icon].viewBox %>',
