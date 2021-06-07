@@ -10,13 +10,13 @@ const icons = {
   }<% if (i < Object.keys(icons).length - 1) { %>, <% } %>
 <% }) %>};
 
-interface IIconProps  {
-  name?: string,
-  className: string,
+interface IIconProps {
+  name: string,
+  className?: string,
   size?: number,
-  color: string,
-  style: object,
-  small: boolean
+  color?: string,
+  style?: object,
+  small?: boolean
 };
 
 const Icon = ({ name, size = 30, color = '#2b95d6', className, style, small, ...props }: IIconProps) => {
