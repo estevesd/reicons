@@ -19,7 +19,7 @@ interface IIconProps  {
   small: boolean
 };
 
-const Icon = ({ name, size = 30, color, className, style, small, ...props }: IIconProps) => {
+const Icon = ({ name, size = 30, color = '#2b95d6', className, style, small, ...props }: IIconProps) => {
   let ChosenIcon = icons[name];
   if (small && icons[name + "16"]){
     ChosenIcon = icons[name + "16"]
