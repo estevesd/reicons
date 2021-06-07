@@ -34,7 +34,7 @@ export default {
 const AllIcons = args => <AllWrap><% _.each(Object.keys(icons), function(icon, i) {%>
     <IconContainer><<%= icon %> {...args} /><p><%= icon %></p></IconContainer><% }) %>
 </AllWrap>;
-export const All:any = AllIcons.bind({});
+export const All: any = AllIcons.bind({});
 All.argTypes = {
     name: { table: { disable: true } }
 }
@@ -44,7 +44,7 @@ All.args = {
 };
 
 const OneIcon = (args) => <Icon {...args} />;
-export const One = OneIcon.bind({});
+export const One: any = OneIcon.bind({});
 One.args = {
     name: 'IconActuator',
     size: 48,
